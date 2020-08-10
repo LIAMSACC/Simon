@@ -131,7 +131,7 @@ function checkAnswer(currentLevel) {
       level=[0];
       newGame=true;
       setTimeout (function(){
-          $("#"+body+"").removeClass("game");
+          $("#"+body+"").removeClass("game-over");
       },100);
 
     }
