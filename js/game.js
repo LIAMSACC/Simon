@@ -16,6 +16,7 @@ function nextSequence() {
 
   // Once nextSequence() is triggered, reset the userClickedPattern to an empty array ready for the next level.
   userClickedPattern = [];
+     $("body").removeClass("game-over");
 
 
 
@@ -59,7 +60,6 @@ $("body").keydown(function(){
     //call nextSequence if new game
  if (newGame === true) {
 console.log (newGame);
-$("body").removeClass("game-over");
      nextSequence();
      newGame = false;
 
@@ -72,6 +72,7 @@ $("body").removeClass("game-over");
    // level ++;
 
    nextSequence();
+
  }
 
   });
@@ -120,19 +121,18 @@ function checkAnswer(currentLevel) {
       console.log("wrong");
       //display game over and assign the game over class to body
       $("body").addClass("game-over");
-      $("#level-title").text("Game Over Press any key to restart");
+      playSound("wrong");
+      $("#level-title").text("Game Over,  Press any key to restart");
       startOver();
 
 
     }
 
     function startOver(){
-      gamePattern=[0];
-      level=[0];
+      gamePattern=[];
+      level=0;
       newGame=true;
-      setTimeout (function(){
-          $("body").removeClass("game-over");
-      },100);
+
 
     }
 
