@@ -135,5 +135,14 @@ function checkAnswer(currentLevel) {
 
 
     }
+    $(".Reset-Button").click(function(){
+    
+      gamePattern=[];
+      level=0;
+      newGame=true;
+        nextSequence();
+     });
+
+
 
 }
